@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\GIT\\Testing\\Eshop\\Eshop\\Eshop.csproj",
         "projectName": "Eshop",
         "projectPath": "D:\\GIT\\Testing\\Eshop\\Eshop\\Eshop.csproj",
-        "packagesPath": "C:\\Users\\vophu\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\phanl\\.nuget\\packages\\",
         "outputPath": "D:\\GIT\\Testing\\Eshop\\Eshop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vophu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\phanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
