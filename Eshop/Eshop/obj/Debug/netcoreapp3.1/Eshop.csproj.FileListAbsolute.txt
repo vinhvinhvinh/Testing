@@ -2,7 +2,6 @@ D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_030619
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\appsettings.json
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\Eshop.exe
-D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.csprojAssemblyReference.cache
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.RazorAssemblyInfo.cache
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.RazorAssemblyInfo.cs
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.AssemblyInfoInputs.cache
@@ -171,3 +170,8 @@ D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_030619
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.dll
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.pdb
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.genruntimeconfig.cache
+D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Accounts\Create.cshtml.g.cs
+D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Accounts\Delete.cshtml.g.cs
+D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Accounts\Details.cshtml.g.cs
+D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Accounts\Edit.cshtml.g.cs
+D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Accounts\Index.cshtml.g.cs
