@@ -357,3 +357,8 @@ C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop
 C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.Views.pdb
 C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.csproj.CopyComplete
 C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.genruntimeconfig.cache
+C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Invoices\Create.cshtml.g.cs
+C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Invoices\Delete.cshtml.g.cs
+C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Invoices\Details.cshtml.g.cs
+C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Invoices\Edit.cshtml.g.cs
+C:\Users\Anh Nhat\Desktop\KTPM\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Invoices\Index.cshtml.g.cs
