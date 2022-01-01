@@ -17,5 +17,7 @@ namespace Eshop.Data
         public DbSet<Eshop.Models.Account> Account { get; set; }
 
         public DbSet<Eshop.Models.ProductType> ProductType { get; set; }
+
+        public DbSet<Eshop.Models.Invoice> Invoice { get; set; }
     }
 }

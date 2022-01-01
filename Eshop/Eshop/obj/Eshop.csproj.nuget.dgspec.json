@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GIT\\Testing\\Eshop\\Eshop\\Eshop.csproj": {}
+    "C:\\Users\\Anh Nhat\\Desktop\\KTPM\\Testing\\Eshop\\Eshop\\Eshop.csproj": {}
   },
   "projects": {
-    "D:\\GIT\\Testing\\Eshop\\Eshop\\Eshop.csproj": {
+    "C:\\Users\\Anh Nhat\\Desktop\\KTPM\\Testing\\Eshop\\Eshop\\Eshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GIT\\Testing\\Eshop\\Eshop\\Eshop.csproj",
+        "projectUniqueName": "C:\\Users\\Anh Nhat\\Desktop\\KTPM\\Testing\\Eshop\\Eshop\\Eshop.csproj",
         "projectName": "Eshop",
-        "projectPath": "D:\\GIT\\Testing\\Eshop\\Eshop\\Eshop.csproj",
-        "packagesPath": "C:\\Users\\phanl\\.nuget\\packages\\",
-        "outputPath": "D:\\GIT\\Testing\\Eshop\\Eshop\\obj\\",
+        "projectPath": "C:\\Users\\Anh Nhat\\Desktop\\KTPM\\Testing\\Eshop\\Eshop\\Eshop.csproj",
+        "packagesPath": "C:\\Users\\Anh Nhat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anh Nhat\\Desktop\\KTPM\\Testing\\Eshop\\Eshop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\phanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anh Nhat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,7 +42,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[3.1.21, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
@@ -52,7 +52,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[3.1.21, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
