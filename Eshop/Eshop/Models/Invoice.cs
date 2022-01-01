@@ -41,6 +41,6 @@ namespace Eshop.Models
         public bool Status { get; set; } = true;
 
         // Collection reference property cho khóa ngoại từ InvoiceDetail
-        //public List<InvoiceDetail> InvoiceDetails { get; set; }
+        public List<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

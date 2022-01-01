@@ -21,5 +21,8 @@ namespace Eshop.Models
 
         [DisplayName("Trạng thái tài khoản")]
         public int Status { get; set; }
+
+        public List<Product> Products { get; set; }
+
     }
 }

@@ -19,5 +19,11 @@ namespace Eshop.Data
         public DbSet<Eshop.Models.ProductType> ProductType { get; set; }
 
         public DbSet<Eshop.Models.Invoice> Invoice { get; set; }
+
+        public DbSet<Eshop.Models.Cart> Cart { get; set; }
+
+        public DbSet<Eshop.Models.InvoiceDetail> InvoiceDetail { get; set; }
+
+        public DbSet<Eshop.Models.Product> Product { get; set; }
     }
 }
