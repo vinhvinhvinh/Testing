@@ -172,7 +172,7 @@ namespace Eshop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
+                    b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductTypeId")
