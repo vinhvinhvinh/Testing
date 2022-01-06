@@ -48,6 +48,11 @@ namespace Eshop.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> Cake()
+        {
+            var Allprt = _context.Product.ToList();
+            return View(Allprt);
+        }
 
         [HttpPost]
         public async Task<IActionResult> Login(string Username, string Password)
