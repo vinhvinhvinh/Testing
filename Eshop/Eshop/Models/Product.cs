@@ -28,8 +28,11 @@ namespace Eshop.Models
         public string Description { get; set; }
 
         [Required(ErrorMessage = "{0} không được bỏ trống!")]
-        [DisplayName("Price")]
-        public int Phone { get; set; }
+        [DisplayName("Giá")]
+        public int Price { get; set; }
+
+        
+
 
         [DisplayName("Số lượng")]
         [Required(ErrorMessage = "{0} không được bỏ trống")]
