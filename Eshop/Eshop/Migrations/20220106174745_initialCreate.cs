@@ -77,7 +77,7 @@ namespace Eshop.Migrations
                     SKU = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: false),
-                    Phone = table.Column<int>(nullable: false),
+                    Price = table.Column<int>(nullable: false),
                     Stock = table.Column<int>(nullable: false),
                     ProductTypeId = table.Column<int>(nullable: false),
                     Image = table.Column<string>(nullable: true),
