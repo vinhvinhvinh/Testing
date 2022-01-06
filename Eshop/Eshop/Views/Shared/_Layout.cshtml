@@ -138,7 +138,7 @@
             <ul>
                 <li data-index="rs-1587" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="img/home-slider/slider-12.jpg" data-rotate="0" data-saveperformance="off" data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="img/home-slider/slider-12.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                    <img src="~/img/home-slider/slider-12.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
 
                     <!-- LAYER NR. 1 -->
                     <div class="slider_text_box">
@@ -270,7 +270,7 @@
                 </li>
                 <li data-index="rs-1589" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="img/home-slider/slider-14.jpg" data-rotate="0" data-saveperformance="off" data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="img/home-slider/slider-14.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                    <img src="~/img/home-slider/slider-14.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <!-- LAYERS -->
                     <!-- LAYER NR. 1 -->
@@ -348,7 +348,7 @@
                 <div class="row footer_wd_inner">
                     <div class="col-lg-3 col-6">
                         <aside class="f_widget f_about_widget">
-                            <img src="img/footer-logo.png" alt="">
+                            <img src="~/img/footer-logo.png" alt="">
                             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui bland itiis praesentium voluptatum deleniti atque corrupti.</p>
                             <ul class="nav">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -414,8 +414,10 @@
     <div class="search_area zoom-anim-dialog mfp-hide" id="test-search">
         <div class="search_box_inner">
             <h3>Search</h3>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+            <div class="input-group"> 
+                <form asp-controller="Product" asp-action="Search"  method="post">
+                    <input name="keyword" type="text" class="form-control" placeholder="Search for...">
+                </form>
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button"><i class="icon icon-Search"></i></button>
                 </span>

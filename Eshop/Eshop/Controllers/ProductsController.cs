@@ -156,5 +156,15 @@ namespace Eshop.Controllers
         {
             return _context.Product.Any(e => e.Id == id);
         }
+
+        public IActionResult Search(string keyword = "")
+        {
+            if (keyword == null)
+            {
+                keyword = "";
+            }
+            var productList = _context.Product.Where(prod => prod.Name.Contains(keyword) || prod.Description.Contains(keyword) || prod.ProductType.Name.Contains(keyword)).ToList();
+            return View(productList);
+        }
     }
 }
