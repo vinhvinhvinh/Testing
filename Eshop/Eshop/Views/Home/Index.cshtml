@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Trang chủ";
+    var alltype = ViewBag.AllType;
 }
 
 
@@ -10,7 +11,7 @@
             <div class="title_view_all">
                 <div class="float-left">
                     <div class="main_w_title">
-                        <h2>Our Featured Cakes</h2>
+                        <h2>Cake Categories</h2>
                         <h5> Seldolor sit amet consect etur</h5>
                     </div>
                 </div>
@@ -19,55 +20,24 @@
                 </div>
             </div>
             <div class="cake_feature_slider owl-carousel">
-                <div class="item">
-                    <div class="cake_feature_item">
-                        <div class="cake_img">
-                            <img src="~/img/cake-feature/c-feature-1.jpg" alt="">
-                        </div>
-                        <div class="cake_text">
-                            <h4>$29</h4>
-                            <h3>Strawberry Cupcakes</h3>
-                            <a class="pest_btn" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cake_feature_item">
-                        <div class="cake_img">
-                            <img src="~/img/cake-feature/c-feature-2.jpg" alt="">
-                        </div>
-                        <div class="cake_text">
-                            <h4>$29</h4>
-                            <h3>Strawberry Cupcakes</h3>
-                            <a class="pest_btn" href="#">Add to cart</a>
+
+                @foreach (ProductType t in ViewBag.AllType)
+                {
+                    <div class="item">
+                        <div class="cake_feature_item">
+                            <a asp-action="TypeDetail" asp-route-id="@t.Id">
+                                <div class="cake_img">
+                                    <img src="~/img/service/@t.Image" alt="">
+                                </div>
+                            </a>
+                            <div class="cake_text">
+                                <h3>@t.Name</h3>
+                                <a class="pest_btn" asp-action="TypeDetail" asp-route-id="@t.Id">View more</a>
+                            </div>
                         </div>
                     </div>
+                 }
                 </div>
-                <div class="item">
-                    <div class="cake_feature_item">
-                        <div class="cake_img">
-                            <img src="~/img/cake-feature/c-feature-3.jpg" alt="">
-                        </div>
-                        <div class="cake_text">
-                            <h4>$29</h4>
-                            <h3>Strawberry Cupcakes</h3>
-                            <a class="pest_btn" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cake_feature_item">
-                        <div class="cake_img">
-                            <img src="~/img/cake-feature/c-feature-4.jpg" alt="">
-                        </div>
-                        <div class="cake_text">
-                            <h4>$29</h4>
-                            <h3>Strawberry Cupcakes</h3>
-                            <a class="pest_btn" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

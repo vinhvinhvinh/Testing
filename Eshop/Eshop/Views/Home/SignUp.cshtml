@@ -1,7 +1,7 @@
 ﻿
 @{
     Layout = "";
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Sign Up";
     @model Eshop.Models.Account;
 }
 
@@ -17,7 +17,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Sign Up</title>
 
     <!-- Fontfaces CSS-->
     <link href="~/css/font-face.css" rel="stylesheet" media="all">
@@ -39,6 +39,12 @@
 
     <!-- Main CSS-->
     <link href="~/css/theme.css" rel="stylesheet" media="all">
+    <style>
+        .page-content--bge5{
+            height:auto;
+        }
+       
+    </style>
 
 </head>
 
@@ -55,37 +61,54 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form asp-controller="Home" asp-action="Login" method="post">
+                            <form asp-controller="Home" asp-action="SignUp" method="post">
                                 <div class="form-group">
                                     <label asp-for="Username">Tên đăng nhập</label>
                                     <input asp-for="Username" class="au-input au-input--full" type="text" name="username" placeholder="Tên đăng nhập...">
+                                    <span style="color:red">@ViewBag.SignUpUsernameFailMessage</span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Email">Email</label>
+                                    <input asp-for="Email" class="au-input au-input--full" type="email" name="email" placeholder="Email...">
+                                   
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Phone">Điện thoại</label>
+                                    <input asp-for="Phone" class="au-input au-input--full" type="text" name="phone" placeholder="0123456789">
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Address">Địa chỉ</label>
+                                    <input asp-for="Address" class="au-input au-input--full" type="text" name="address" placeholder="Địa chỉ...">
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Fullname">Họ tên</label>
+                                    <input asp-for="Fullname" class="au-input au-input--full" type="text" name="fullname" placeholder="Họ và tên">
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Password">Mật khẩu</label>
                                     <input asp-for="Password" class="au-input au-input--full" type="password" name="password" placeholder="Mật khẩu...">
-                                    <span style="color:red">@ViewBag.LoginFailMessage</span>
+                                    
                                 </div>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Remember Me
-                                    </label>
-                                    <label>
-                                        <a href="#">Forgotten Password?</a>
-                                    </label>
+                                <div class="form-group">
+                                    <label asp-for="Password">Mật khẩu</label>
+                                    <input class="au-input au-input--full" type="password" name="confirmpassword" placeholder="Xác nhận mật khẩu...">
+                                    <span style="color:red">@ViewBag.ConfirmPasswordError</span>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+
+                                
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign up</button>
 
                                 @*<div class="social-login-content">
-                                        <div class="social-button">
-                                            <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                            <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                        </div>
-                                    </div>*@
+            <div class="social-button">
+                <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
+                <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
+            </div>
+        </div>*@
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't you have account?
-                                    <a asp-controller="Home" asp-action="SignUp">Sign Up Here</a>
+                                    
+                                    <a asp-controller="Home" asp-action="Login">You have an Account ? Login here !</a>
                                 </p>
                             </div>
                         </div>
@@ -97,7 +120,6 @@
     </div>
 
     <!-- Jquery JS-->
-    
     <!-- Bootstrap JS-->
     <script src="~/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="~/vendor/bootstrap-4.1/bootstrap.min.js"></script>
