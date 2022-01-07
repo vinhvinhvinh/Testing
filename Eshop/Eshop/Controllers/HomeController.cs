@@ -14,7 +14,7 @@ namespace Eshop.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         private readonly EshopContext _context;
 
         public HomeController(EshopContext context)
@@ -30,6 +30,9 @@ namespace Eshop.Controllers
                 ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
                 ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
             }
+
+            var ptype = _context.ProductType.ToList();
+            ViewBag.AllType = ptype;
             return View();
         }
 
@@ -80,7 +83,7 @@ namespace Eshop.Controllers
 
                 if (!login.IsAdmin)
                 {
-                        return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -103,6 +106,16 @@ namespace Eshop.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+<<<<<<< HEAD
+=======
+
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
+
+>>>>>>> 8ca8bb605f8d3237334235b945d7d268b758d0f9
         [HttpPost]
         public async Task<IActionResult> SignUp(string username, string email, string phone, string address, string fullname, string password, string confirmpassword)
         {

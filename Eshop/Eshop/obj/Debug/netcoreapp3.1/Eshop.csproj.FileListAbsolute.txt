@@ -386,6 +386,7 @@ D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_030619
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\ProductTypes\Edit.cshtml.g.cs
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\ProductTypes\Index.cshtml.g.cs
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+<<<<<<< HEAD
 D:\GIT\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\GIT\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\appsettings.json
 D:\GIT\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\Eshop.exe
@@ -591,3 +592,7 @@ D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.pdb
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.genruntimeconfig.cache
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cake.cshtml.g.cs
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp.cshtml.g.cs
+=======
+D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.csprojAssemblyReference.cache
+D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp.cshtml.g.cs
+>>>>>>> 8ca8bb605f8d3237334235b945d7d268b758d0f9
