@@ -158,6 +158,15 @@ namespace Eshop.Controllers
             }
 
         }
+        public IActionResult SearchResults(string keyword = "")
+        {
+            if (keyword == null)
+            {
+                keyword = "";
+            }
+            var productList = _context.Product.Where(prod => prod.Name.Contains(keyword) || prod.Description.Contains(keyword) || prod.ProductType.Name.Contains(keyword)).ToList();
+            return View(productList);
+        }
 
     }
 }
