@@ -51,7 +51,7 @@ namespace Eshop.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> Cake()
+        public IActionResult Cake()
         {
             var Allprt = _context.Product.ToList();
             return View(Allprt);
@@ -167,6 +167,28 @@ namespace Eshop.Controllers
             var productList = _context.Product.Where(prod => prod.Name.Contains(keyword) || prod.Description.Contains(keyword) || prod.ProductType.Name.Contains(keyword)).ToList();
             return View(productList);
         }
+
+        public async Task<IActionResult> ProductByType(int? id)
+        {
+          
+            //select sản phẩm theo loại
+           var product =  _context.Product.Where(prod=>prod.ProductTypeId==id);
+            if (product == null)
+            {
+                //nếu null thì cho ra thông báo
+                ViewBag.NullProductType = "Blank Category, Please come back later, Thanks! ";
+                return View();
+            }
+
+            ProductType productTypeName = _context.ProductType.Where(prod => prod.Id == id).First();
+
+
+            ViewBag.ProdductByType_Name = productTypeName.Name.ToString();
+            ViewBag.ProductByType = product;
+            return View();
+        }
+
+       
 
     }
 }
