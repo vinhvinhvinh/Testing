@@ -56,10 +56,7 @@ namespace Eshop.Controllers
             var Allprt = _context.Product.ToList();
             return View(Allprt);
         }
-        public IActionResult SignUp()
-        {
-            return View();
-        }
+      
         [HttpPost]
         public async Task<IActionResult> Login(string Username, string Password)
         {
@@ -106,8 +103,7 @@ namespace Eshop.Controllers
             return RedirectToAction("Index", "Home");
 
         }
-<<<<<<< HEAD
-=======
+
 
         public IActionResult SignUp()
         {
@@ -115,7 +111,7 @@ namespace Eshop.Controllers
         }
 
 
->>>>>>> 8ca8bb605f8d3237334235b945d7d268b758d0f9
+
         [HttpPost]
         public async Task<IActionResult> SignUp(string username, string email, string phone, string address, string fullname, string password, string confirmpassword)
         {
