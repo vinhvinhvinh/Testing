@@ -590,3 +590,4 @@ D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.dll
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.pdb
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.genruntimeconfig.cache
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cake.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\SignUp.cshtml.g.cs

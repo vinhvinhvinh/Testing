@@ -53,7 +53,10 @@ namespace Eshop.Controllers
             var Allprt = _context.Product.ToList();
             return View(Allprt);
         }
-
+        public IActionResult SignUp()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Login(string Username, string Password)
         {
@@ -100,5 +103,52 @@ namespace Eshop.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+        [HttpPost]
+        public async Task<IActionResult> SignUp(string username, string email, string phone, string address, string fullname, string password, string confirmpassword)
+        {
+
+            // Kiểm tra đã tồn tại username nào hay chưa ?!
+            Account signUpAccount = _context.Account.Where(a => a.Username == username).FirstOrDefault();
+            if (signUpAccount == null)
+            {
+                if (password != confirmpassword)
+                {
+                    ViewBag.ConfirmPasswordError = "The password confirmation does not match";
+                    return View();
+                }
+
+                Account newUserSignUp = new Account();
+                newUserSignUp.Username = username;
+                newUserSignUp.Password = password;
+                newUserSignUp.Email = email;
+                newUserSignUp.Phone = phone;
+                newUserSignUp.Address = address;
+                newUserSignUp.Fullname = fullname;
+                newUserSignUp.IsAdmin = false;
+                newUserSignUp.Avatar = "";
+                newUserSignUp.Status = 1;
+                _context.Account.Add(newUserSignUp);
+                _context.SaveChanges();
+
+                Account login = _context.Account.Where(a => a.Username == username).FirstOrDefault();
+                CookieOptions cookieDate = new CookieOptions()
+                {
+                    Expires = DateTime.Now.AddDays(30)
+                    //Expires = DateTime.UtcNow.AddMilliseconds(1500)
+                };
+
+                HttpContext.Response.Cookies.Append("AccountId", login.Id.ToString(), cookieDate);
+                HttpContext.Response.Cookies.Append("AccountName", login.Fullname.ToString(), cookieDate);
+                HttpContext.Response.Cookies.Append("AccountAvatar", login.Avatar.ToString(), cookieDate);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.SignUpUsernameFailMessage = "Username has already been taken.";
+                return View();
+            }
+
+        }
+
     }
 }
