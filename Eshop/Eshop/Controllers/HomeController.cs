@@ -51,7 +51,12 @@ namespace Eshop.Controllers
         {
             return View();
         }
-
+        public async Task<IActionResult> Cake()
+        {
+            var Allprt = _context.Product.ToList();
+            return View(Allprt);
+        }
+      
         [HttpPost]
         public async Task<IActionResult> Login(string Username, string Password)
         {
@@ -99,10 +104,12 @@ namespace Eshop.Controllers
 
         }
 
+
         public IActionResult SignUp()
         {
             return View();
         }
+
 
 
         [HttpPost]
@@ -150,6 +157,15 @@ namespace Eshop.Controllers
                 return View();
             }
 
+        }
+        public IActionResult SearchResults(string keyword = "")
+        {
+            if (keyword == null)
+            {
+                keyword = "";
+            }
+            var productList = _context.Product.Where(prod => prod.Name.Contains(keyword) || prod.Description.Contains(keyword) || prod.ProductType.Name.Contains(keyword)).ToList();
+            return View(productList);
         }
 
     }

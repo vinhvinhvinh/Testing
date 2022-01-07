@@ -1,7 +1,9 @@
 ﻿
+
+﻿
 @{
-    Layout = "";
-    ViewData["Title"] = "Sign Up";
+    Layout="";
+ ViewData["Title"] = "Sign Up";
     @model Eshop.Models.Account;
 }
 
@@ -40,10 +42,14 @@
     <!-- Main CSS-->
     <link href="~/css/theme.css" rel="stylesheet" media="all">
     <style>
-        .page-content--bge5{
-            height:auto;
+
+        .page-content--bge5 {
+            height: auto;
         }
-       
+
+        .page-content--bge5 {
+            height: auto;
+        }
     </style>
 
 </head>
@@ -70,7 +76,7 @@
                                 <div class="form-group">
                                     <label asp-for="Email">Email</label>
                                     <input asp-for="Email" class="au-input au-input--full" type="email" name="email" placeholder="Email...">
-                                   
+
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Phone">Điện thoại</label>
@@ -87,7 +93,7 @@
                                 <div class="form-group">
                                     <label asp-for="Password">Mật khẩu</label>
                                     <input asp-for="Password" class="au-input au-input--full" type="password" name="password" placeholder="Mật khẩu...">
-                                    
+
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Password">Xác nhận mật khẩu</label>
@@ -95,52 +101,53 @@
                                     <span style="color:red">@ViewBag.ConfirmPasswordError</span>
                                 </div>
 
-                                
+
+
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign up</button>
 
-                                @*<div class="social-login-content">
-            <div class="social-button">
-                <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-            </div>
-        </div>*@
+
                             </form>
+
                             <div class="register-link">
-                                <p>
-                                    
-                                    <a asp-controller="Home" asp-action="Login">You have an Account ? Login here !</a>
-                                </p>
+                              
+
+
+                                    <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign up</button>
+
+
+                                    <div class="register-link">
+                                        <p>
+
+
+                                            <a asp-controller="Home" asp-action="Login">You have an Account ? Login here !</a>
+                                        </p>
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
+        <!-- Jquery JS-->
+        <!-- Bootstrap JS-->
+        <script src="~/vendor/bootstrap-4.1/popper.min.js"></script>
+        <script src="~/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+        <!-- Vendor JS       -->
+        <script src="~/vendor/slick/slick.min.js"></script>
+        <script src="~/vendor/wow/wow.min.js"></script>
+        <script src="~/vendor/animsition/animsition.min.js"></script>
+        <script src="~/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <script src="~/vendor/counter-up/jquery.waypoints.min.js"></script>
+        <script src="~/vendor/counter-up/jquery.counterup.min.js"></script>
+        <script src="~/vendor/circle-progress/circle-progress.min.js"></script>
+        <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="~/vendor/chartjs/Chart.bundle.min.js"></script>
+        <script src="~/vendor/select2/select2.min.js"></script>
 
-    <!-- Jquery JS-->
-    <!-- Bootstrap JS-->
-    <script src="~/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="~/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="~/vendor/slick/slick.min.js">
-    </script>
-    <script src="~/vendor/wow/wow.min.js"></script>
-    <script src="~/vendor/animsition/animsition.min.js"></script>
-    <script src="~/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="~/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="~/vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="~/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="~/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="~/vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <script src="~/js/main.js"></script>
+        <!-- Main JS-->
+        <script src="~/js/main.js"></script>
 
 </body>
 
