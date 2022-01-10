@@ -22,6 +22,14 @@ namespace Eshop.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
             var eshopContext = _context.Product.Include(p => p.ProductType);
             return View(await eshopContext.ToListAsync());
         }
@@ -29,6 +37,14 @@ namespace Eshop.Controllers
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
             if (id == null)
             {
                 return NotFound();
@@ -48,6 +64,14 @@ namespace Eshop.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
             ViewData["ProductTypeId"] = new SelectList(_context.ProductType, "Id", "Name");
             return View();
         }
@@ -72,6 +96,14 @@ namespace Eshop.Controllers
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
             if (id == null)
             {
                 return NotFound();
@@ -93,6 +125,14 @@ namespace Eshop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,SKU,Name,Description,Price,Stock,ProductTypeId,Image,Status")] Product product)
         {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
             if (id != product.Id)
             {
                 return NotFound();
@@ -125,6 +165,14 @@ namespace Eshop.Controllers
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
             if (id == null)
             {
                 return NotFound();
