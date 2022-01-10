@@ -22,12 +22,26 @@ namespace Eshop.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index()
         {
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
             return View(await _context.Account.ToListAsync());
         }
 
         // GET: Accounts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -46,6 +60,14 @@ namespace Eshop.Controllers
         // GET: Accounts/Create
         public IActionResult Create()
         {
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
+
             return View();
         }
 
@@ -68,6 +90,14 @@ namespace Eshop.Controllers
         // GET: Accounts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
+
             if (id == null)
             {
                 return NotFound();
