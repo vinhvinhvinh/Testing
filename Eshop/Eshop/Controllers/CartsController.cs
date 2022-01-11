@@ -196,6 +196,7 @@ namespace Eshop.Controllers
             var cart = await _context.Cart.FindAsync(id);
             _context.Cart.Remove(cart);
             await _context.SaveChangesAsync();
+            
             return RedirectToAction(nameof(Index));
         }
 

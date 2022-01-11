@@ -67,11 +67,12 @@ namespace Eshop.Controllers
         }
       
         [HttpPost]
-        public async Task<IActionResult> Login(string Username, string Password)
+        public IActionResult Login(string Username, string Password)
         {
 
             //----------Login with Cookie
             Account login = _context.Account.Where(a => a.Username == Username && a.Password == Password).FirstOrDefault();
+           
 
             if (login != null)
             {
@@ -103,6 +104,7 @@ namespace Eshop.Controllers
                 ViewBag.LoginFailMessage = "Login Fail. Incorrect Username or Password";
                 return View();
             }
+            
 
         }
         public IActionResult Logout()
@@ -229,6 +231,24 @@ namespace Eshop.Controllers
 
             return View();
         }
+        public IActionResult RemoveCart()
+        {
+            var accountId = HttpContext.Request.Cookies["AccountId"].ToString();
+            List<Cart> carts = _context.Cart.Include(c => c.Account).Where(c => c.AccountId == Convert.ToInt32(accountId)).ToList();
+            foreach(Cart c in carts)
+            {
+                _context.RemoveRange(c);
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Cart", "Home");
+        }
+        public IActionResult Cart()
+        {
+            //HttpContext.Response.Cookies.Append("Account_ID", account.Account_ID.ToString());
+            var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
+            var cart = _context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.AccountId == Convert.ToInt32(idaccount));
+            return View(cart);
 
+        }
     }
 }
