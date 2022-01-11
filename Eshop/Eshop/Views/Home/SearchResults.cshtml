@@ -88,12 +88,11 @@
                         <div class="p_w_title">
                             <h3>Filter By Price</h3>
                         </div>
-                        <div class="filter_price">
-                            <div id="slider-range"></div>
-                            <label for="amount">Price range:</label>
-                            <input type="text" id="amount" readonly />
-                            <a href="#">Filter</a>
-                        </div>
+                        <form asp-action="SearchResults" asp-controller="Home" method="get" min="" max="" class="filter_price">
+                            <label style=" margin-block: auto;" for="text">Từ </label><br/><input style="outline:auto" type="number" name="minprice" /><br />
+                            <label style=" margin-block: auto;" for="text">Đến </label><br/><input style="outline:auto" type="number" name="maxprice" /><br />
+                            <button style="margin-top:5px;font-size:14px;border-radius:5px" type="submit">Tìm kiếm</button>
+                        </form>
                     </aside>
                     <aside class="left_sidebar p_sale_widget">
                         <div class="p_w_title">
@@ -101,7 +100,7 @@
                         </div>
                         <div class="media">
                             <div class="d-flex">
-                                <img src="img/product/sale-product/s-product-1.jpg" alt="">
+                                <img src="~/img/product/sale-product/s-product-1.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <a href="#"><h4>Brown Cake</h4></a>
@@ -117,7 +116,7 @@
                         </div>
                         <div class="media">
                             <div class="d-flex">
-                                <img src="img/product/sale-product/s-product-2.jpg" alt="">
+                                <img src="~/img/product/sale-product/s-product-2.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <a href="#"><h4>Brown Cake</h4></a>
@@ -133,7 +132,7 @@
                         </div>
                         <div class="media">
                             <div class="d-flex">
-                                <img src="img/product/sale-product/s-product-3.jpg" alt="">
+                                <img src="~/img/product/sale-product/s-product-3.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <a href="#"><h4>Brown Cake</h4></a>
@@ -149,7 +148,7 @@
                         </div>
                         <div class="media">
                             <div class="d-flex">
-                                <img src="img/product/sale-product/s-product-4.jpg" alt="">
+                                <img src="~/img/product/sale-product/s-product-4.jpg" alt="">
                             </div>
                             <div class="media-body">
                                 <a href="#"><h4>Brown Cake</h4></a>

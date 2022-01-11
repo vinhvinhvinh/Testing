@@ -9,6 +9,7 @@ using Eshop.Models;
 using Eshop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Eshop.Controllers
 {
@@ -170,7 +171,7 @@ namespace Eshop.Controllers
             }
 
         }
-        public IActionResult SearchResults(string keyword = "")
+        public IActionResult SearchResults( int? minprice, int? maxprice, string keyword = "")
         {
 
             //Hiển thị thông tin đăng nhập
@@ -185,7 +186,22 @@ namespace Eshop.Controllers
             {
                 keyword = "";
             }
-            var productList = _context.Product.Where(prod => prod.Name.Contains(keyword) || prod.Description.Contains(keyword) || prod.ProductType.Name.Contains(keyword)).ToList();
+            if (minprice == null)
+            {
+                minprice = 0;
+            }
+            if (maxprice == null)
+            {
+                maxprice = int.MaxValue;
+            }
+            var productList = _context.Product.Where(prod => prod.Name.Contains(keyword) || prod.Description.Contains(keyword) || prod.ProductType.Name.Contains(keyword)).Where(pro => pro.Price >= minprice && pro.Price <= maxprice).ToList();
+            return View(productList);
+        }
+
+        public IActionResult Search( int? minprice, int? maxprice)
+        {
+            List<Product> productList = _context.Product.ToList();
+            
             return View(productList);
         }
 
