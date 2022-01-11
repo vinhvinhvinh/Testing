@@ -8831,11 +8831,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anh Nhat\\Desktop\\a\\Testing\\Eshop\\Eshop\\Eshop.csproj",
+      "projectUniqueName": "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\Eshop.csproj",
       "projectName": "Eshop",
-      "projectPath": "C:\\Users\\Anh Nhat\\Desktop\\a\\Testing\\Eshop\\Eshop\\Eshop.csproj",
+      "projectPath": "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\Eshop.csproj",
       "packagesPath": "C:\\Users\\Anh Nhat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anh Nhat\\Desktop\\a\\Testing\\Eshop\\Eshop\\obj\\",
+      "outputPath": "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anh Nhat\\AppData\\Roaming\\NuGet\\NuGet.Config",

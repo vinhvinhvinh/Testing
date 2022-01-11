@@ -28,6 +28,7 @@ namespace Eshop.Controllers
             if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
             {
                 ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
                 ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
             }
 
@@ -51,7 +52,20 @@ namespace Eshop.Controllers
         {
             return View();
         }
+        public IActionResult Cake()
+        {
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
 
+            var Allprt = _context.Product.ToList();
+            return View(Allprt);
+        }
+      
         [HttpPost]
         public async Task<IActionResult> Login(string Username, string Password)
         {
@@ -68,6 +82,7 @@ namespace Eshop.Controllers
                 };
 
                 HttpContext.Response.Cookies.Append("AccountId", login.Id.ToString(), cookieDate);
+                HttpContext.Response.Cookies.Append("AccountEmail", login.Email.ToString(), cookieDate);
                 HttpContext.Response.Cookies.Append("AccountName", login.Fullname.ToString(), cookieDate);
                 HttpContext.Response.Cookies.Append("AccountAvatar", login.Avatar.ToString(), cookieDate);
 
@@ -79,7 +94,7 @@ namespace Eshop.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Login", "Home");
+                    return RedirectToAction("Dashboard", "Home");
                 }
 
             }
@@ -92,17 +107,20 @@ namespace Eshop.Controllers
         }
         public IActionResult Logout()
         {
-            HttpContext.Response.Cookies.Append("AccountID", "", new CookieOptions { Expires = DateTime.Now.AddDays(-1) });
+            HttpContext.Response.Cookies.Append("AccountId", "", new CookieOptions { Expires = DateTime.Now.AddDays(-1) });
             HttpContext.Response.Cookies.Append("AccountName", "", new CookieOptions { Expires = DateTime.Now.AddDays(-1) });
+            HttpContext.Response.Cookies.Append("AccountEmail", "", new CookieOptions { Expires = DateTime.Now.AddDays(-1) });
             HttpContext.Response.Cookies.Append("AccountAvatar", "", new CookieOptions { Expires = DateTime.Now.AddDays(-1) });
             return RedirectToAction("Index", "Home");
 
         }
 
+
         public IActionResult SignUp()
         {
             return View();
         }
+
 
 
         [HttpPost]
@@ -141,6 +159,7 @@ namespace Eshop.Controllers
 
                 HttpContext.Response.Cookies.Append("AccountId", login.Id.ToString(), cookieDate);
                 HttpContext.Response.Cookies.Append("AccountName", login.Fullname.ToString(), cookieDate);
+                HttpContext.Response.Cookies.Append("AccountEmail", login.Email.ToString(), cookieDate);
                 HttpContext.Response.Cookies.Append("AccountAvatar", login.Avatar.ToString(), cookieDate);
                 return RedirectToAction("Index", "Home");
             }
@@ -153,12 +172,62 @@ namespace Eshop.Controllers
         }
         public IActionResult SearchResults(string keyword = "")
         {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
+
             if (keyword == null)
             {
                 keyword = "";
             }
             var productList = _context.Product.Where(prod => prod.Name.Contains(keyword) || prod.Description.Contains(keyword) || prod.ProductType.Name.Contains(keyword)).ToList();
             return View(productList);
+        }
+
+        public async Task<IActionResult> ProductByType(int? id)
+        {
+
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
+
+            //select sản phẩm theo loại
+            var product =  _context.Product.Where(prod=>prod.ProductTypeId==id);
+            if (product == null)
+            {
+                //nếu null thì cho ra thông báo
+                ViewBag.NullProductType = "Blank Category, Please come back later, Thanks! ";
+                return View();
+            }
+
+            ProductType productTypeName = _context.ProductType.Where(prod => prod.Id == id).First();
+
+
+            ViewBag.ProdductByType_Name = productTypeName.Name.ToString();
+            ViewBag.ProductByType = product;
+            return View();
+        }
+
+       public IActionResult Dashboard()
+        {
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+
+            }
+
+            return View();
         }
 
     }

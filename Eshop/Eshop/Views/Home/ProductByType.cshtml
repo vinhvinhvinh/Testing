@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Eshop.Models.Product>
+@{
+    var prodByTypeList = ViewBag.ProductByType;
+  
+
+}
+<section class="banner_area">
+    <div class="container">
+        <div class="banner_text">
+           
+            
+                <h3>Cake Categories</h3>
+            
+
+
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cakes.html">Services</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--================End Main Header Area =================-->
+<!--================Blog Main Area =================-->
+<section class="our_cakes_area p_100">
+    <div class="container">
+        <div class="main_title">
+            <h2>@ViewBag.ProdductByType_Name</h2>
+            <h5>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</h5>
+        </div>
+
+        <div class="cake_feature_row row">
+           
+           
+                @foreach (var product in prodByTypeList)
+                {<div class="col-lg-3 col-md-4 col-6">
+                        <div class="cake_feature_item">
+                            <div class="cake_img">
+                                <img src="~/img/cake-feature/@product.Image" alt="">
+                            </div>
+                            <div class="cake_text">
+                                <h4>@product.Price</h4>
+                                <h3>@product.Name</h3>
+                                <a class="pest_btn" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            
+
+
+        </div>
+    </div>
+</section>
+<!--================End Blog Main Area =================-->
