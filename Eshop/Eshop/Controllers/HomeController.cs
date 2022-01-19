@@ -65,7 +65,20 @@ namespace Eshop.Controllers
             var Allprt = _context.Product.ToList();
             return View(Allprt);
         }
-      
+        public IActionResult InvoiceDetail()
+        {
+            //Hiển thị thông tin đăng nhập
+            if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
+            {
+                ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
+                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
+            }
+
+            var Allprt = _context.InvoiceDetail.ToList();
+            return View(Allprt);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(string Username, string Password)
         {
