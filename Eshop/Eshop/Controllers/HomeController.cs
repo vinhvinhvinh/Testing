@@ -52,6 +52,102 @@ namespace Eshop.Controllers
         {
             return View();
         }
+        private bool CheckStock(string username)
+        {
+            List<Cart> carts = _context.Cart.Include(c => c.Product).Include(c => c.Account)
+                                            .Where(c => c.Account.Username == username).ToList();
+            foreach (Cart c in carts)
+            {
+                if (c.Product.Stock < c.Quantity)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public IActionResult Cart()
+        {
+            return View();
+        }
+        public IActionResult Pay()
+        {
+            string username = HttpContext.Request.Cookies["AccountUsername"].ToString();
+            ViewBag.Account = _context.Account.Where(a => a.Username == username).FirstOrDefault();
+            ViewBag.CartsTotail = _context.Cart.Include(c => c.Product).Include(c => c.Account)
+                                                .Where(c => c.Account.Username == username)
+                                                .Sum(c => c.Quantity * c.Product.Price);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Pay([Bind("ShippingAddress, ShippingPhone")] Invoice invoice)
+        {
+            string username = HttpContext.Request.Cookies["AccountUsername"].ToString();
+            if (!CheckStock(username))
+            {
+                ViewBag.Error = "Hết hàng";
+                ViewBag.Account = _context.Account.Where(a => a.Username == username).FirstOrDefault();
+                ViewBag.CartsTotal = _context.Cart.Include(c => c.Product).Include(c => c.Account)
+                                                    .Where(c => c.Account.Username == username)
+                                                    .Sum(c => c.Quantity * c.Product.Price);
+                return View();
+            }
+            //thêm hóa đơn
+            DateTime now = DateTime.Now;
+            invoice.Code = now.ToString("yyMMddhhmmss");
+            invoice.AccountId = _context.Account.FirstOrDefault(a => a.Username == username).Id;
+            invoice.IssuedDate = now;
+            invoice.Total = _context.Cart.Include(c => c.Product).Include(c => c.Account)
+                                        .Where(c => c.Account.Username == username)
+                                        .Sum(c => c.Quantity * c.Product.Price);
+            _context.Add(invoice);
+            _context.SaveChanges();
+
+            // thêm chi tiết hóa hơn
+            List<Cart> carts = _context.Cart.Include(c => c.Product).Include(c => c.Account)
+                .Where(c => c.Account.Username == username).ToList();
+            foreach (Cart c in carts)
+            {
+                InvoiceDetail invoiceDetail = new InvoiceDetail();
+                invoiceDetail.InvoiceId = invoice.Id;
+                invoiceDetail.ProductId = c.ProductId;
+                invoiceDetail.Quantity = c.Quantity;
+                invoiceDetail.UnitPrice = c.Product.Price;
+                _context.Add(invoiceDetail);
+
+            }
+            _context.SaveChanges();
+            foreach (Cart c in carts)
+            {
+                c.Product.Stock -= c.Quantity;
+                _context.Cart.Remove(c);
+
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Home");
+
+        }
+        public IActionResult Add(int productId, int quantity)
+        {
+            string username = HttpContext.Request.Cookies["AccountUsername"].ToString();
+
+            int accountId = _context.Account.FirstOrDefault(a => a.Username == username).Id;
+            Cart cart = _context.Cart.FirstOrDefault(c => c.AccountId == accountId && c.ProductId == productId);
+            if (cart == null)
+            {
+                cart = new Cart();
+                cart.AccountId = accountId;
+                cart.ProductId = productId;
+                cart.Quantity = quantity;
+                _context.Cart.Add(cart);
+            }
+            else
+            {
+                cart.Quantity += quantity;
+
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Cartuser");
+        }
         public IActionResult Cake()
         {
             //Hiển thị thông tin đăng nhập

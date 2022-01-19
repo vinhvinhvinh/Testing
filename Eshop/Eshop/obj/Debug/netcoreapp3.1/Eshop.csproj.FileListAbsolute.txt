@@ -151,8 +151,6 @@ D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.MvcApplicationPartsAsse
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.RazorAssemblyInfo.cache
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.RazorAssemblyInfo.cs
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\staticwebassets\Eshop.StaticWebAssets.Manifest.cache
-D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\staticwebassets\Eshop.StaticWebAssets.xml
-D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\scopedcss\bundle\Eshop.styles.css
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.TagHelpers.input.cache
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.TagHelpers.output.cache
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.RazorCoreGenerate.cache
@@ -412,3 +410,7 @@ D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_030619
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductByType.cshtml.g.cs
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductByType.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cart.cshtml.g.cs
