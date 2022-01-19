@@ -299,5 +299,13 @@ namespace Eshop.Controllers
             _context.SaveChanges();
             return RedirectToAction("RemoveCart", "Home"); 
         }
+        public async Task<IActionResult> DeleteCartid(int id)
+        {
+            var cart = await _context.Cart.FindAsync(id);
+            _context.Cart.Remove(cart);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Cart", "Home");
+        }
     }
 }

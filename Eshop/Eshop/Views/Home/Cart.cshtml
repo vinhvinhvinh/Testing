@@ -154,7 +154,7 @@
                             </td>
                             <td>@(item.Product.Price*item.Quantity)</td>
                             <td>
-                                <a asp-action="Delete" asp-controller="Carts" asp-route-id="@item.Id">Delete</a>
+                                <a asp-action="DeleteCartid" asp-controller="Home" asp-route-id="@item.Id">Delete</a>
                             </td>
                         </tr>
                     }
