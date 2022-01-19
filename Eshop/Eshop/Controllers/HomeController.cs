@@ -244,11 +244,60 @@ namespace Eshop.Controllers
         }
         public IActionResult Cart()
         {
-            //HttpContext.Response.Cookies.Append("Account_ID", account.Account_ID.ToString());
             var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
+            if (_context.Cart.FirstOrDefault(c => c.AccountId == Convert.ToInt32(idaccount)) == null)
+            {
+                ViewBag.total =0;
+            }
+            else
+            {
+                ViewBag.total = (_context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).Sum(c
+               => Convert.ToInt32(c.Quantity) * c.Product.Price));
+            }    
+            //HttpContext.Response.Cookies.Append("Account_ID", account.Account_ID.ToString());
             var cart = _context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.AccountId == Convert.ToInt32(idaccount));
             return View(cart);
 
+        }
+        public IActionResult Checkout()
+        {
+            var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
+            ViewBag.total = (_context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).Sum(c
+                 => Convert.ToInt32(c.Quantity) * c.Product.Price));
+            var cart = _context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.AccountId == Convert.ToInt32(idaccount));
+            return View(cart);
+        }
+        public IActionResult Pay()
+        {
+           
+            DateTime date = DateTime.Now;
+            var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
+            var phoneAccount = _context.Account.FirstOrDefault(c => c.Id == Convert.ToInt32(idaccount)).Phone;
+            var addAccount = _context.Account.FirstOrDefault(c => c.Id == Convert.ToInt32(idaccount)).Address;
+            Invoice invoice = new Invoice();
+            invoice.Code = "";
+            invoice.IssuedDate = date;
+            invoice.AccountId = Convert.ToInt32(idaccount);
+            invoice.ShippingAddress = addAccount;
+            invoice.ShippingPhone = phoneAccount;
+            invoice.Total = (_context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).Sum(c 
+                => Convert.ToInt32(c.Quantity) * c.Product.Price));
+            _context.Add(invoice);
+            _context.SaveChanges();
+            //them chi tiet hoa don
+            List<Cart> cart = _context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).ToList();
+            foreach(Cart c in cart)
+            {
+                InvoiceDetail invoiceDetail = new InvoiceDetail();
+                invoiceDetail.InvoiceId = invoice.Id;
+                invoiceDetail.ProductId = c.ProductId;
+                invoiceDetail.Quantity = c.Quantity;
+                invoiceDetail.UnitPrice = _context.Product.FirstOrDefault(p => p.Id == c.ProductId).Price;
+                _context.Add(invoiceDetail);
+               
+            }
+            _context.SaveChanges();
+            return RedirectToAction("RemoveCart", "Home"); 
         }
     }
 }

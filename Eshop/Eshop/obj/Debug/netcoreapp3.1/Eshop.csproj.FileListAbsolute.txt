@@ -208,3 +208,4 @@ C:\Users\Anh Nhat\Desktop\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.dll
 C:\Users\Anh Nhat\Desktop\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.pdb
 C:\Users\Anh Nhat\Desktop\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.genruntimeconfig.cache
 C:\Users\Anh Nhat\Desktop\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.csproj.AssemblyReference.cache
+C:\Users\Anh Nhat\Desktop\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Checkout.cshtml.g.cs
