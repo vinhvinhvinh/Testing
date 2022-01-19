@@ -142,8 +142,6 @@ D:\GIT\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sql
 D:\GIT\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\GIT\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\GIT\Testing\Eshop\Eshop\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.csproj.AssemblyReference.cache
-D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.GeneratedMSBuildEditorConfig.editorconfig
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.AssemblyInfoInputs.cache
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.AssemblyInfo.cs
 D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.csproj.CoreCompileInputs.cache
@@ -412,3 +410,8 @@ D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_030619
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductByType.cshtml.g.cs
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
 D:\CDTH19E_0306191487\HocKy5\Software Testing\Do an\0306191487_0306191307_0306191344_0306191345_0306191378\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Eshop.csprojAssemblyReference.cache
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductByType.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
+D:\GIT\Testing\Eshop\Eshop\obj\Debug\netcoreapp3.1\Razor\Views\Home\InvoiceDetail.cshtml.g.cs
