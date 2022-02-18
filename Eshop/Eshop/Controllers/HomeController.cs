@@ -67,11 +67,12 @@ namespace Eshop.Controllers
         }
       
         [HttpPost]
-        public async Task<IActionResult> Login(string Username, string Password)
+        public IActionResult Login(string Username, string Password)
         {
 
             //----------Login with Cookie
             Account login = _context.Account.Where(a => a.Username == Username && a.Password == Password).FirstOrDefault();
+           
 
             if (login != null)
             {
@@ -103,6 +104,7 @@ namespace Eshop.Controllers
                 ViewBag.LoginFailMessage = "Login Fail. Incorrect Username or Password";
                 return View();
             }
+            
 
         }
         public IActionResult Logout()
@@ -229,6 +231,81 @@ namespace Eshop.Controllers
 
             return View();
         }
+        public IActionResult RemoveCart()
+        {
+            var accountId = HttpContext.Request.Cookies["AccountId"].ToString();
+            List<Cart> carts = _context.Cart.Include(c => c.Account).Where(c => c.AccountId == Convert.ToInt32(accountId)).ToList();
+            foreach(Cart c in carts)
+            {
+                _context.RemoveRange(c);
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Cart", "Home");
+        }
+        public IActionResult Cart()
+        {
+            var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
+            if (_context.Cart.FirstOrDefault(c => c.AccountId == Convert.ToInt32(idaccount)) == null)
+            {
+                ViewBag.total =0;
+            }
+            else
+            {
+                ViewBag.total = (_context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).Sum(c
+               => Convert.ToInt32(c.Quantity) * c.Product.Price));
+            }    
+            //HttpContext.Response.Cookies.Append("Account_ID", account.Account_ID.ToString());
+            var cart = _context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.AccountId == Convert.ToInt32(idaccount));
+            return View(cart);
 
+        }
+        public IActionResult Checkout()
+        {
+            var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
+            ViewBag.total = (_context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).Sum(c
+                 => Convert.ToInt32(c.Quantity) * c.Product.Price));
+            var cart = _context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.AccountId == Convert.ToInt32(idaccount));
+            return View(cart);
+        }
+        public IActionResult Pay()
+        {
+           
+            DateTime date = DateTime.Now;
+            var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
+            var phoneAccount = _context.Account.FirstOrDefault(c => c.Id == Convert.ToInt32(idaccount)).Phone;
+            var addAccount = _context.Account.FirstOrDefault(c => c.Id == Convert.ToInt32(idaccount)).Address;
+            Invoice invoice = new Invoice();
+            invoice.Code = "";
+            invoice.IssuedDate = date;
+            invoice.AccountId = Convert.ToInt32(idaccount);
+            invoice.ShippingAddress = addAccount;
+            invoice.ShippingPhone = phoneAccount;
+            invoice.Total = (_context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).Sum(c 
+                => Convert.ToInt32(c.Quantity) * c.Product.Price));
+            _context.Add(invoice);
+            _context.SaveChanges();
+            //them chi tiet hoa don
+            List<Cart> cart = _context.Cart.Include(c => c.Account).Include(c => c.Product).Where(c => c.Account.Id == Convert.ToInt32(idaccount)).ToList();
+            foreach(Cart c in cart)
+            {
+                InvoiceDetail invoiceDetail = new InvoiceDetail();
+                invoiceDetail.InvoiceId = invoice.Id;
+                invoiceDetail.ProductId = c.ProductId;
+                invoiceDetail.Quantity = c.Quantity;
+                invoiceDetail.UnitPrice = _context.Product.FirstOrDefault(p => p.Id == c.ProductId).Price;
+                _context.Add(invoiceDetail);
+               
+            }
+            _context.SaveChanges();
+            return RedirectToAction("RemoveCart", "Home"); 
+        }
+        public async Task<IActionResult> DeleteCartid(int id)
+        {
+            var cart = await _context.Cart.FindAsync(id);
+            _context.Cart.Remove(cart);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Cart", "Home");
+        }
     }
 }

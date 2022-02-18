@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CDTH19E_0306191487\\HocKy5\\Software Testing\\Do an\\0306191487_0306191307_0306191344_0306191345_0306191378\\Testing\\Eshop\\Eshop\\Eshop.csproj": {}
+    "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\Eshop.csproj": {}
   },
   "projects": {
-    "D:\\CDTH19E_0306191487\\HocKy5\\Software Testing\\Do an\\0306191487_0306191307_0306191344_0306191345_0306191378\\Testing\\Eshop\\Eshop\\Eshop.csproj": {
+    "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\Eshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CDTH19E_0306191487\\HocKy5\\Software Testing\\Do an\\0306191487_0306191307_0306191344_0306191345_0306191378\\Testing\\Eshop\\Eshop\\Eshop.csproj",
+        "projectUniqueName": "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\Eshop.csproj",
         "projectName": "Eshop",
-        "projectPath": "D:\\CDTH19E_0306191487\\HocKy5\\Software Testing\\Do an\\0306191487_0306191307_0306191344_0306191345_0306191378\\Testing\\Eshop\\Eshop\\Eshop.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\CDTH19E_0306191487\\HocKy5\\Software Testing\\Do an\\0306191487_0306191307_0306191344_0306191345_0306191378\\Testing\\Eshop\\Eshop\\obj\\",
+        "projectPath": "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\Eshop.csproj",
+        "packagesPath": "C:\\Users\\Anh Nhat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anh Nhat\\Desktop\\Testing\\Eshop\\Eshop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anh Nhat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -75,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
