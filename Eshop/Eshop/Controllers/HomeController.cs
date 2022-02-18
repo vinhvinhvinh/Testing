@@ -242,6 +242,39 @@ namespace Eshop.Controllers
             _context.SaveChanges();
             return RedirectToAction("Cart", "Home");
         }
+        public IActionResult AddToCart(int id)
+        {
+            return AddToCart(id, 1);
+        }
+
+        [HttpPost]
+        public IActionResult AddToCart(int productId, int quantity)
+        {
+            var userid = Int32.Parse(HttpContext.Request.Cookies["AccountId"]);
+
+
+            //string username = HttpContext.Request.Cookies["AccountUsername"].ToString();
+
+            //int accountId = _context.Account.FirstOrDefault(a => a.Username == username).Id;
+
+            Cart cart = _context.Cart.FirstOrDefault(c => c.AccountId == userid && c.ProductId == productId);
+            if (cart == null)
+            {
+                cart = new Cart();
+                cart.AccountId = userid;
+                cart.ProductId = productId;
+                cart.Quantity = quantity;
+                _context.Cart.Add(cart);
+            }
+            else
+            {
+                cart.Quantity += quantity;
+
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Cart");
+        }
         public IActionResult Cart()
         {
             var idaccount = HttpContext.Request.Cookies["AccountId"].ToString();
