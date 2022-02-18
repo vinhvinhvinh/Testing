@@ -125,7 +125,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Preview</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Product</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
@@ -139,7 +139,7 @@
                     {
                         <tr>
                             <td>
-                                <img src=" @Html.DisplayFor(modelItem => item.Product.Image)" alt="">
+                                <img src="~/img/cake-feature/@Html.DisplayFor(modelItem => item.Product.Image)" alt="">
                             </td>
                             <td> @Html.DisplayFor(modelItem => item.Product.Name)</td>
                             <td>@Html.DisplayFor(modelItem => item.Product.Price)</td>
