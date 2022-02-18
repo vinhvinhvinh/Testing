@@ -28,7 +28,7 @@ namespace Eshop.Controllers
             if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
             {
                 ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
-                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                //ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
                 ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
             }
 
@@ -78,7 +78,7 @@ namespace Eshop.Controllers
             {
                 CookieOptions cookieDate = new CookieOptions()
                 {
-                    Expires = DateTime.Now.AddDays(30)
+                    Expires = DateTime.Now.AddDays(1)
                     //Expires = DateTime.UtcNow.AddMilliseconds(1500)
                 };
 
@@ -241,6 +241,39 @@ namespace Eshop.Controllers
             }
             _context.SaveChanges();
             return RedirectToAction("Cart", "Home");
+        }
+        public IActionResult AddToCart(int id)
+        {
+            return AddToCart(id, 1);
+        }
+
+        [HttpPost]
+        public IActionResult AddToCart(int productId, int quantity)
+        {
+            var userid = Int32.Parse(HttpContext.Request.Cookies["AccountId"]);
+
+
+            //string username = HttpContext.Request.Cookies["AccountUsername"].ToString();
+
+            //int accountId = _context.Account.FirstOrDefault(a => a.Username == username).Id;
+
+            Cart cart = _context.Cart.FirstOrDefault(c => c.AccountId == userid && c.ProductId == productId);
+            if (cart == null)
+            {
+                cart = new Cart();
+                cart.AccountId = userid;
+                cart.ProductId = productId;
+                cart.Quantity = quantity;
+                _context.Cart.Add(cart);
+            }
+            else
+            {
+                cart.Quantity += quantity;
+
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Cart");
         }
         public IActionResult Cart()
         {
