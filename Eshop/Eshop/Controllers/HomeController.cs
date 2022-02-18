@@ -28,7 +28,7 @@ namespace Eshop.Controllers
             if (HttpContext.Request.Cookies.ContainsKey("AccountName"))
             {
                 ViewBag.Fullname = HttpContext.Request.Cookies["AccountName"].ToString();
-                ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
+                //ViewBag.Email = HttpContext.Request.Cookies["AccountEmail"].ToString();
                 ViewBag.Avatar = HttpContext.Request.Cookies["AccountAvatar"].ToString();
             }
 
@@ -77,7 +77,7 @@ namespace Eshop.Controllers
             {
                 CookieOptions cookieDate = new CookieOptions()
                 {
-                    Expires = DateTime.Now.AddDays(30)
+                    Expires = DateTime.Now.AddDays(1)
                     //Expires = DateTime.UtcNow.AddMilliseconds(1500)
                 };
 
